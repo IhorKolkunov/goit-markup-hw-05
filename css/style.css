@@ -69,6 +69,7 @@ img {
 }
 
 .navigation-margin {
+ 
     display: flex;
 
     margin-right: 50px;
@@ -98,15 +99,41 @@ img {
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: inherit;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+
 }
 .navigation-menu-active {
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: var(--secondary-color)
+    
 }
+
+.position-nav {
+    position: relative;
+
+}
+
+.navigation-menu-active::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    content: "";
+
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--secondary-color);
+}
+
 .navigation-menu:hover,
 .navigation-menu:focus {
     color: var(--secondary-color);
     fill: var(--secondary-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 .contacts-address {
     display: flex;
@@ -239,11 +266,37 @@ img {
 }
 
 .work-photo-items {
+    position: relative;
+
     flex-basis: calc(100% / 3 - 30px);
     margin-right: 15px;
     margin-left: 15px;
 }
 
+.work-position {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+
+    background-color: rgba(47, 48, 58, 0.8);
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-position {
+    color: var(--revers-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
 /* ======== WHAT DO WE DO & OUR TEAM ======== */
 
 .main-heading {
@@ -315,6 +368,9 @@ img {
     height: 44px;
     border-radius: 50%;
     fill: var(--icon-color);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
     }
 
 .social-list-link:hover,
@@ -322,7 +378,6 @@ img {
     fill: var(--revers-color);
     background-color: var(--secondary-color);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ======================= POST CLIENTS ============================ */
@@ -349,6 +404,9 @@ img {
     fill: var(--icon-color);
     border: 1px solid #AFB1B8; 
     border-radius: 4px;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);;
+
     }
 
 .client-cards-link:hover,
@@ -356,7 +414,6 @@ img {
     fill: var(--secondary-color);
     border: 1px solid var(--secondary-color);
 
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 
@@ -403,12 +460,14 @@ img {
 }
 
 .footer-address-color {
-    color: #ffffff99;;
+    color: #ffffff99;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .footer-address-color:hover,
 .footer-address-color:focus {
     color: var(--secondary-color);
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-heading {
@@ -445,13 +504,15 @@ img {
      border-radius: 50%;
      background-color: rgba(255, 255, 255, 0.1);
      fill: var(--revers-color);
+
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
      }
  
  .footer-social-list-link:hover,
  .footer-social-list-link:focus {
      fill: var(--revers-color);
      background-color: var(--secondary-color);
-     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
 /* ======================= PORTFOLIO ============================ */
@@ -488,6 +549,9 @@ img {
     color: var(--title-text-color);
     background-color: #F5F4FA;
     cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .portfolio-button:hover,
 .portfolio-button:focus {
@@ -496,6 +560,7 @@ img {
 
     border: none;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
 }
 
 .portfolio-flex {
@@ -511,17 +576,50 @@ img {
 
     margin-right: 30px;
     margin-bottom: 30px;
+
+
 }
 
 .portfolio-cards-text {
     display: block;
 
     text-decoration: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-cards-text:hover,
 .portfolio-cards-text:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+
+}
+
+.cards-animation {
+    position: relative;
+    overflow: hidden;
+}
+.cards-animation-text {
+    display: inline-block;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(33, 150, 243, 0.9);
+    padding: 63px 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.03em;
+    color: var(--revers-color);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-cards-text:hover > .cards-animation > .cards-animation-text,
+.portfolio-cards-text:focus > .cards-animation > .cards-animation-text {
+    transform: translateY(-100%);
 }
 
 .conteiner-desc {
@@ -547,8 +645,54 @@ img {
     transition: color ;
 }
 
-@keyframes lololo {
-    0% {
-        transform: scale(2);
-    }
+/* ======================= BACKDROP ============================ */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+                visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 528px;
+    height: 582px;
+    border-radius: 4px;
+
+    background-color: var(--revers-color);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    padding: 0;
+    
+    cursor: pointer;
 }

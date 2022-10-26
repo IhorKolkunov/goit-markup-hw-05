@@ -25,15 +25,15 @@
     <!-- ======== HEADER ======== -->
 
     <header>
-      <div class="conteiner navigation-flex conteiner-padding">
-        <nav class="navigation-flex">
+      <div class="conteiner navigation-flex">
+        <nav class="navigation-flex test ">
           <a class="logo link" href="./index.html" lang="en">
             Web<span class="logo-color-header">Studio</span>
           </a>
-          <ul class="list navigation-flex">
-            <li class="navigation-margin">
+          <ul class="list navigation-flex ">
+            <li class="navigation-margin ">
               <a
-                class="link navigation-menu navigation-menu-active"
+                class="link navigation-menu navigation-menu-active position-nav"
                 href="./index.html"
                 >Студія</a
               >
@@ -83,7 +83,7 @@
       <section class="hero-background section">
         <div class="conteiner">
           <h1 class="hero">Ефективні рішення для вашого бізнесу</h1>
-          <button class="hero-button" type="button">Замовити послугу</button>
+          <button class="hero-button" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
 
@@ -160,6 +160,9 @@
                 width="370"
                 height="294"
               />
+              <div class="work-position">
+                <p class="text-position">Десктопні додатки</p>
+              </div>
             </li>
 
             <li class="work-photo-items">
@@ -169,6 +172,9 @@
                 width="370"
                 height="294"
               />
+              <div class="work-position">
+                <p class="text-position">Мобільні додатки</p>
+              </div>
             </li>
 
             <li class="work-photo-items">
@@ -178,6 +184,9 @@
                 width="370"
                 height="294"
               />
+              <div class="work-position">
+                <p class="text-position">Дизайнерські рішення</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -498,6 +507,18 @@
       </div>
     </footer>
     
+    <!-- ======== BACKDROP ======== -->
+
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg width="11" height="11" class="modal-close-icon">
+            <use href="/images/icon.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <script src="./js/modal.js"></script>
   </body>
 </html>
